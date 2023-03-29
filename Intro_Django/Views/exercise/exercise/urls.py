@@ -1,4 +1,4 @@
-"""MyViews URL Configuration
+"""exercise URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from views_app import views
+from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('views_app.urls')),
-    path('say_hello/', views.say_hello),
-    path('homepage/', views.homepage),
-    path('date/', views.display_date),
-
+    path('', include('myapp.urls')),
+    path('date/', views.DateT, name='Date'),
 ]
